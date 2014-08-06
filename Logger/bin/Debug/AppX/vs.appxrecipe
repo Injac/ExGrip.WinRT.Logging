@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>THOR</Machine>
+    <WindowsUser>Ilija</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>3ca9ac8f-282f-4318-93b4-8074d91df897</PackageIdentityName>
+    <IntermediateOutputPath>G:\Projects\POC\LoggerWinRT\Logger\obj\Debug\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>D325C8B069AD377DC3433082AC42688B3453EED93B9DB26D4354505A30CBB467</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>3ca9ac8f-282f-4318-93b4-8074d91df897_1.0.0.0_neutral__e7vddq4gc132c</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>3ca9ac8f-282f-4318-93b4-8074d91df897_e7vddq4gc132c!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>3ca9ac8f-282f-4318-93b4-8074d91df897</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Ilija</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-08-06T19:36:21.584</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\Logger.exe">
+      <PackagePath>Logger.exe</PackagePath>
+      <Modified>2014-08-06T19:37:14.315</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\bin\Debug\ExGrip.WinRT.Logging.dll">
+      <PackagePath>ExGrip.WinRT.Logging.dll</PackagePath>
+      <Modified>2014-08-06T19:36:19.490</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\Assets\640px-Tesla_circa_1890.jpg">
+      <PackagePath>Assets\640px-Tesla_circa_1890.jpg</PackagePath>
+      <Modified>2014-08-06T19:32:11.942</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T13:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T13:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T13:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T13:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2014-08-06T19:36:21.068</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\MainPage.xbf">
+      <PackagePath>MainPage.xbf</PackagePath>
+      <Modified>2014-08-06T19:37:14.223</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\Logger.xr.xml">
+      <PackagePath>Logger.xr.xml</PackagePath>
+      <Modified>2014-08-06T19:36:21.006</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2014-08-06T19:36:21.412</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

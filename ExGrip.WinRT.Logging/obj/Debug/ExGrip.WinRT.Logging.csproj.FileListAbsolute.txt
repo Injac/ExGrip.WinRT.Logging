@@ -1,0 +1,16 @@
+G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\bin\Debug\ExGrip.WinRT.Logging.dll
+G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\bin\Debug\ExGrip.WinRT.Logging.pdb
+G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\bin\Debug\ExGrip.WinRT.Logging.pri
+G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\obj\Debug\ExGrip.WinRT.Logging.dll
+G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\obj\Debug\ExGrip.WinRT.Logging.pdb
+G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\obj\Debug\priconfig.xml
+G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\obj\Debug\priconfig.xml.intermediate
+G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\obj\Debug\layout.resfiles
+G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\obj\Debug\layout.resfiles.intermediate
+G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\obj\Debug\resources.resfiles
+G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\obj\Debug\resources.resfiles.intermediate
+G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\obj\Debug\pri.resfiles
+G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\obj\Debug\pri.resfiles.intermediate
+G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\obj\Debug\qualifiers.txt
+G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\obj\Debug\qualifiers.txt.intermediate
+G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\obj\Debug\MultipleQualifiersPerDimensionFound.txt

@@ -1,0 +1,2 @@
+G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\ExGrip.WinRT.Logging.csproj;neutral
+G:\Projects\POC\LoggerWinRT\LoggerPhone\LoggerPhone.csproj;neutral
