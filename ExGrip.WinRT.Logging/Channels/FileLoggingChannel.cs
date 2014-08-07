@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -25,6 +27,28 @@ namespace ExGrip.WinRT.Logging.Channels {
         /// The name of the log file.
         /// </value>
         protected virtual string LogFileName {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Gets or sets the file size in bytes.
+        /// </summary>
+        /// <value>
+        /// The file size in bytes.
+        /// </value>
+        protected virtual ulong FileSizeInBytes {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Gets or sets the maximum file size in bytes.
+        /// </summary>
+        /// <value>
+        /// The maximum file size in bytes.
+        /// </value>
+        public virtual ulong MaxFileSizeInBytes {
             get;
             set;
         }
@@ -106,6 +130,69 @@ namespace ExGrip.WinRT.Logging.Channels {
         }
 
         /// <summary>
+        /// Gets the file size in bytes.
+        /// </summary>
+        /// <returns></returns>
+        protected virtual async Task GetFileSizeInBytes() {
+
+            if(this.File != null) {
+
+                var fileProperties = await this.File.GetBasicPropertiesAsync();
+
+                this.FileSizeInBytes = fileProperties.Size;
+
+
+            }
+
+        }
+
+        protected virtual async Task ArchiveLog() {
+
+
+            using (MemoryStream archiveStream = new MemoryStream()) {
+
+                using (ZipArchive zip = new ZipArchive(archiveStream, ZipArchiveMode.Create,true)) {
+
+                    var logArchive = zip.CreateEntry(this.LogFileName);
+
+                    using (StreamWriter sw = new StreamWriter(logArchive.Open())) {
+
+                        var logFileLines = await FileIO.ReadLinesAsync(this.File);
+
+                        var logFileContent = string.Join(Environment.NewLine, logFileLines);
+
+                        await sw.WriteAsync(logFileContent);
+
+
+                    }
+
+
+                }
+
+                //save zip
+                var archiveFolder = await Windows.Storage.ApplicationData.Current.LocalFolder.CreateFolderAsync(
+                                        "logArchive", CreationCollisionOption.OpenIfExists);
+
+                var zipFile = await archiveFolder.CreateFileAsync(
+                                  string.Format("{0}_logarchive.zip", DateTime.Now.Ticks));
+
+                archiveStream.Position = 0;
+
+                using (Stream s = await zipFile.OpenStreamForWriteAsync()) {
+                    archiveStream.CopyTo(s);
+
+                }
+
+                await this.File.DeleteAsync();
+
+                await this.Init();
+
+                this.IsActive = true;
+            }
+
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="FileLoggingChannel"/> class.
         /// </summary>
         protected FileLoggingChannel(string fileName,StorageFolder logFolder) {
@@ -136,8 +223,16 @@ namespace ExGrip.WinRT.Logging.Channels {
 
             try {
 
+                await this.GetFileSizeInBytes();
 
-                await FileIO.AppendTextAsync(this.File, logEntry);
+                if (this.FileSizeInBytes < this.MaxFileSizeInBytes) {
+                    await FileIO.AppendTextAsync(this.File, logEntry);
+                }
+
+                else {
+                    this.IsActive = false;
+                    await this.ArchiveLog();
+                }
             }
 
             finally {
@@ -148,5 +243,7 @@ namespace ExGrip.WinRT.Logging.Channels {
             return entry;
 
         }
+
+
     }
 }

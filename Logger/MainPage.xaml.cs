@@ -41,6 +41,8 @@ namespace Logger {
             //Create a new LogChannel
             MyFileLogChannel lgChannel = new MyFileLogChannel("mylog.txt", Windows.Storage.ApplicationData.Current.LocalFolder);
 
+            lgChannel.MaxFileSizeInBytes = 500000;
+
             //Init the channel
             await lgChannel.Init();
 

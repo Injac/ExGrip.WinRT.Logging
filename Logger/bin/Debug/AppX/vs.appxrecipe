@@ -20,17 +20,17 @@
     <AppXManifest Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-08-06T19:36:21.584</Modified>
+      <Modified>2014-08-06T19:55:36.759</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\Logger.exe">
       <PackagePath>Logger.exe</PackagePath>
-      <Modified>2014-08-06T19:37:14.315</Modified>
+      <Modified>2014-08-07T05:33:29.451</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\bin\Debug\ExGrip.WinRT.Logging.dll">
       <PackagePath>ExGrip.WinRT.Logging.dll</PackagePath>
-      <Modified>2014-08-06T19:36:19.490</Modified>
+      <Modified>2014-08-07T05:33:28.419</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\Assets\640px-Tesla_circa_1890.jpg">
       <PackagePath>Assets\640px-Tesla_circa_1890.jpg</PackagePath>
@@ -58,11 +58,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2014-08-06T19:36:21.068</Modified>
+      <Modified>2014-08-06T19:55:36.399</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2014-08-06T19:37:14.223</Modified>
+      <Modified>2014-08-06T19:55:36.400</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\Logger.xr.xml">
       <PackagePath>Logger.xr.xml</PackagePath>
@@ -70,7 +70,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2014-08-06T19:36:21.412</Modified>
+      <Modified>2014-08-06T19:55:36.690</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
