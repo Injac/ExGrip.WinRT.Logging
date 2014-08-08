@@ -175,7 +175,7 @@ namespace ExGrip.WinRT.Logging.Channels {
 
                 }
 
-                //save zip
+
                 var archiveFolder = await Windows.Storage.ApplicationData.Current.LocalFolder.CreateFolderAsync(
                                         "logArchive", CreationCollisionOption.OpenIfExists);
 

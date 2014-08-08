@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Channels\FileLoggingChannel.cs" />
+    <Compile Include="Exceptions\StorageSpaceExceededException.cs" />
     <Compile Include="Helpers\StringFormatter.cs" />
     <Compile Include="ILogEntry.cs" />
     <Compile Include="ILoggingSession.cs" />
