@@ -14,3 +14,4 @@ G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\obj\Debug\pri.resfiles.intermed
 G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\obj\Debug\qualifiers.txt
 G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\obj\Debug\qualifiers.txt.intermediate
 G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\obj\Debug\MultipleQualifiersPerDimensionFound.txt
+G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\obj\Debug\ExGrip.WinRT.Logging.csprojResolveAssemblyReference.cache

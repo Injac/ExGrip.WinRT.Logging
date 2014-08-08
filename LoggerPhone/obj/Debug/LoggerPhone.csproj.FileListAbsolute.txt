@@ -9,7 +9,6 @@ G:\Projects\POC\LoggerWinRT\LoggerPhone\bin\Debug\LoggerPhone.build.appxrecipe
 G:\Projects\POC\LoggerWinRT\LoggerPhone\bin\Debug\ExGrip.WinRT.Logging.dll
 G:\Projects\POC\LoggerWinRT\LoggerPhone\bin\Debug\ExGrip.WinRT.Logging.pdb
 G:\Projects\POC\LoggerWinRT\LoggerPhone\bin\Debug\ExGrip.WinRT.Logging.pri
-G:\Projects\POC\LoggerWinRT\LoggerPhone\obj\Debug\LoggerPhone.csprojResolveAssemblyReference.cache
 G:\Projects\POC\LoggerWinRT\LoggerPhone\obj\Debug\App.g.i.cs
 G:\Projects\POC\LoggerWinRT\LoggerPhone\obj\Debug\App.g.cs
 G:\Projects\POC\LoggerWinRT\LoggerPhone\obj\Debug\MainPage.g.i.cs
