@@ -7,7 +7,7 @@
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>3ca9ac8f-282f-4318-93b4-8074d91df897</PackageIdentityName>
-    <IntermediateOutputPath>G:\Projects\POC\LoggerWinRT\Logger\obj\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\obj\Debug\</IntermediateOutputPath>
     <RegisteredManifestChecksum>D325C8B069AD377DC3433082AC42688B3453EED93B9DB26D4354505A30CBB467</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>3ca9ac8f-282f-4318-93b4-8074d91df897_1.0.0.0_neutral__e7vddq4gc132c</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>3ca9ac8f-282f-4318-93b4-8074d91df897_e7vddq4gc132c!App</RegisteredUserModeAppID>
@@ -17,60 +17,80 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-08-06T19:55:36.759</Modified>
+      <Modified>2014-08-08T07:49:16.778</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\Logger.exe">
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\bin\Debug\Logger.exe">
       <PackagePath>Logger.exe</PackagePath>
-      <Modified>2014-08-07T05:33:29.451</Modified>
+      <Modified>2014-08-08T07:49:16.373</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\bin\Debug\ExGrip.WinRT.Logging.dll">
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\ExGrip.WinRT.Logging\bin\Debug\ExGrip.WinRT.Logging.dll">
       <PackagePath>ExGrip.WinRT.Logging.dll</PackagePath>
-      <Modified>2014-08-07T05:33:28.419</Modified>
+      <Modified>2014-08-08T07:49:09.015</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\Assets\640px-Tesla_circa_1890.jpg">
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\Assets\640px-Tesla_circa_1890.jpg">
       <PackagePath>Assets\640px-Tesla_circa_1890.jpg</PackagePath>
-      <Modified>2014-08-06T19:32:11.942</Modified>
+      <Modified>2014-08-08T06:27:35.104</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\Assets\Logo.scale-100.png">
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-07-23T13:01:02.000</Modified>
+      <Modified>2014-08-08T06:27:35.104</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\Assets\SmallLogo.scale-100.png">
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-07-23T13:01:02.000</Modified>
+      <Modified>2014-08-08T06:27:35.104</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-07-23T13:01:02.000</Modified>
+      <Modified>2014-08-08T06:27:35.104</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-07-23T13:01:02.000</Modified>
+      <Modified>2014-08-08T06:27:35.120</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\App.xbf">
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2014-08-06T19:55:36.399</Modified>
+      <Modified>2014-08-08T07:49:16.062</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2014-08-06T19:55:36.400</Modified>
+      <Modified>2014-08-08T07:49:16.066</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\Logger.xr.xml">
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\bin\Debug\Logger.xr.xml">
       <PackagePath>Logger.xr.xml</PackagePath>
-      <Modified>2014-08-06T19:36:21.006</Modified>
+      <Modified>2014-08-08T06:27:35.354</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\ExGrip.WinRT.Logging\_CreateNewNuGetPackage\Config.ps1">
+      <PackagePath>ExGrip.WinRT.Logging\_CreateNewNuGetPackage\Config.ps1</PackagePath>
+      <Modified>2014-08-08T07:48:39.015</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\ExGrip.WinRT.Logging\_CreateNewNuGetPackage\DoNotModify\CreateNuGetPackage.ps1">
+      <PackagePath>ExGrip.WinRT.Logging\_CreateNewNuGetPackage\DoNotModify\CreateNuGetPackage.ps1</PackagePath>
+      <Modified>2014-08-08T07:48:38.981</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\ExGrip.WinRT.Logging\_CreateNewNuGetPackage\DoNotModify\New-NuGetPackage.ps1">
+      <PackagePath>ExGrip.WinRT.Logging\_CreateNewNuGetPackage\DoNotModify\New-NuGetPackage.ps1</PackagePath>
+      <Modified>2014-08-08T07:48:38.932</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\ExGrip.WinRT.Logging\_CreateNewNuGetPackage\DoNotModify\UploadNuGetPackage.ps1">
+      <PackagePath>ExGrip.WinRT.Logging\_CreateNewNuGetPackage\DoNotModify\UploadNuGetPackage.ps1</PackagePath>
+      <Modified>2014-08-08T07:48:38.779</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\ExGrip.WinRT.Logging\_CreateNewNuGetPackage\DoNotModify\NuGet.exe">
+      <PackagePath>ExGrip.WinRT.Logging\_CreateNewNuGetPackage\DoNotModify\NuGet.exe</PackagePath>
+      <Modified>2014-08-08T07:48:38.885</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2014-08-06T19:55:36.690</Modified>
+      <Modified>2014-08-08T07:49:16.620</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

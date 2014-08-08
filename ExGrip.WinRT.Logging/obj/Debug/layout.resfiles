@@ -1,0 +1,5 @@
+ExGrip.WinRT.Logging\_CreateNewNuGetPackage\Config.ps1
+ExGrip.WinRT.Logging\_CreateNewNuGetPackage\DoNotModify\CreateNuGetPackage.ps1
+ExGrip.WinRT.Logging\_CreateNewNuGetPackage\DoNotModify\New-NuGetPackage.ps1
+ExGrip.WinRT.Logging\_CreateNewNuGetPackage\DoNotModify\NuGet.exe
+ExGrip.WinRT.Logging\_CreateNewNuGetPackage\DoNotModify\UploadNuGetPackage.ps1

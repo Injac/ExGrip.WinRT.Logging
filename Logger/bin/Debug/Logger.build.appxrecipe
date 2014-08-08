@@ -7,50 +7,65 @@
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>3ca9ac8f-282f-4318-93b4-8074d91df897</PackageIdentityName>
-    <IntermediateOutputPath>G:\Projects\POC\LoggerWinRT\Logger\obj\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\obj\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\Logger.exe">
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\bin\Debug\Logger.exe">
       <PackagePath>Logger.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\ExGrip.WinRT.Logging\bin\Debug\ExGrip.WinRT.Logging.dll">
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\ExGrip.WinRT.Logging\bin\Debug\ExGrip.WinRT.Logging.dll">
       <PackagePath>ExGrip.WinRT.Logging.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\Assets\640px-Tesla_circa_1890.jpg">
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\Assets\640px-Tesla_circa_1890.jpg">
       <PackagePath>Assets\640px-Tesla_circa_1890.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\Assets\Logo.scale-100.png">
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\Assets\SmallLogo.scale-100.png">
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\App.xbf">
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\Logger.xr.xml">
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\bin\Debug\Logger.xr.xml">
       <PackagePath>Logger.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\Projects\POC\LoggerWinRT\Logger\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\ExGrip.WinRT.Logging\_CreateNewNuGetPackage\Config.ps1">
+      <PackagePath>ExGrip.WinRT.Logging\_CreateNewNuGetPackage\Config.ps1</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\ExGrip.WinRT.Logging\_CreateNewNuGetPackage\DoNotModify\CreateNuGetPackage.ps1">
+      <PackagePath>ExGrip.WinRT.Logging\_CreateNewNuGetPackage\DoNotModify\CreateNuGetPackage.ps1</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\ExGrip.WinRT.Logging\_CreateNewNuGetPackage\DoNotModify\New-NuGetPackage.ps1">
+      <PackagePath>ExGrip.WinRT.Logging\_CreateNewNuGetPackage\DoNotModify\New-NuGetPackage.ps1</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\ExGrip.WinRT.Logging\_CreateNewNuGetPackage\DoNotModify\UploadNuGetPackage.ps1">
+      <PackagePath>ExGrip.WinRT.Logging\_CreateNewNuGetPackage\DoNotModify\UploadNuGetPackage.ps1</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\ExGrip.WinRT.Logging\_CreateNewNuGetPackage\DoNotModify\NuGet.exe">
+      <PackagePath>ExGrip.WinRT.Logging\_CreateNewNuGetPackage\DoNotModify\NuGet.exe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

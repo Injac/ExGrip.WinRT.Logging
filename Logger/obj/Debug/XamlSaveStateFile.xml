@@ -1,6 +1,6 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="g:\projects\poc\loggerwinrt\logger\obj\debug\intermediatexaml\logger.exe" HashGuid="1773b5d6-1ebb-4d97-bf22-77a7ca6ddb5b" />
-    <ReferenceAssembly PathName="g:\projects\exgrip\windows\loggerwinrt\exgrip.winrt.logging\exgrip.winrt.logging\bin\debug\exgrip.winrt.logging.dll" HashGuid="90d5c894-0b39-d2ca-f9b6-a53dd90f203d" />
+    <LocalAssembly PathName="g:\projects\exgrip\windows\loggerwinrt\exgrip.winrt.logging\logger\obj\debug\intermediatexaml\logger.exe" HashGuid="c3f88320-1f0a-7a61-47a6-25f97026832b" />
+    <ReferenceAssembly PathName="g:\projects\exgrip\windows\loggerwinrt\exgrip.winrt.logging\exgrip.winrt.logging\bin\debug\exgrip.winrt.logging.dll" HashGuid="e76a4cd0-6efb-1a57-1b7f-ec7ec365c381" />
   </ReferenceAssemblyList>
 </XamlCompilerSaveState>
