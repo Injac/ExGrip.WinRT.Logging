@@ -1,0 +1,28 @@
+Changelog
+=========
+
+%%version%% (unreleased)
+------------------------
+
+- Added custom exception. [Ilija Injac]
+
+- Added free-space detection. [Ilija Injac]
+
+- Added space left detection to the FileLoggingChannel. [Ilija Injac]
+
+1.0.0 (2014-08-07)
+------------------
+
+- Update readme.md. [Ilija Injac]
+
+- Update readme.md. [Ilija Injac]
+
+- Added Zip-Archiving. [Ilija Injac]
+
+- Added Zip-Archiving. [Ilija Injac]
+
+- Added gitignore. [Ilija Injac]
+
+- Initial. [Ilija Injac]
+
+
