@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using ExGrip.WinRT.Logging.Exceptions;
 using Windows.Storage;
 
 namespace ExGrip.WinRT.Logging.Channels {
@@ -146,6 +147,11 @@ namespace ExGrip.WinRT.Logging.Channels {
 
         }
 
+        /// <summary>
+        /// Creates a zip file of the
+        /// current log-file.
+        /// </summary>
+        /// <returns></returns>
         protected virtual async Task ArchiveLog() {
 
 
@@ -210,14 +216,14 @@ namespace ExGrip.WinRT.Logging.Channels {
         }
 
         /// <summary>
-        /// Logs the message.
+        /// Logging the message to a file.
         /// </summary>
         /// <param name="entry">The entry.</param>
         /// <returns></returns>
         public async Task<ILogEntry> LogMessage(ILogEntry entry) {
 
             var logEntry = string.Format("{0}\t{1}\t{2}{3}", entry.Time, entry.EntrySeverity, entry.Entry,Environment.NewLine);
-
+            bool noSpaceLeft = false;
 
             await _fileLock.WaitAsync();
 
@@ -225,24 +231,56 @@ namespace ExGrip.WinRT.Logging.Channels {
 
                 await this.GetFileSizeInBytes();
 
-                if (this.FileSizeInBytes < this.MaxFileSizeInBytes) {
-                    await FileIO.AppendTextAsync(this.File, logEntry);
-                }
+                var spaceAvailable = await this.GetFreeSpace(this.Folder);
 
-                else {
-                    this.IsActive = false;
-                    await this.ArchiveLog();
+                noSpaceLeft = (spaceAvailable < this.FileSizeInBytes);
+
+
+                if (!noSpaceLeft) {
+                    if (this.FileSizeInBytes < this.MaxFileSizeInBytes) {
+                        await FileIO.AppendTextAsync(this.File, logEntry);
+                    }
+
+                    else {
+                        this.IsActive = false;
+                        await this.ArchiveLog();
+                    }
                 }
             }
 
             finally {
                 _fileLock.Release();
+
+                if(noSpaceLeft) {
+
+                    throw new StorageSpaceExceededException("No space left for the file-logger.");
+                }
             }
 
 
             return entry;
 
         }
+
+
+        /// <summary>
+        /// Taken from
+        /// http://stackoverflow.com/questions/19510449/disk-space-in-winrt-using-c-sharp-in-windows-8
+        /// Calculates the free space of a IStorage item (a folder for example)
+        /// </summary>
+        /// <param name="sf">The IStorage Item</param>
+        /// <returns>Available space left in IStorageItem (in bytes)</returns>
+        protected virtual async Task<UInt64> GetFreeSpace(IStorageItem sf) {
+
+            var properties = await sf.GetBasicPropertiesAsync();
+            var filteredProperties = await properties.RetrievePropertiesAsync(new[] { "System.FreeSpace" });
+            var freeSpace = filteredProperties["System.FreeSpace"];
+
+            return (UInt64)freeSpace;
+        }
+
+
+
 
 
     }
