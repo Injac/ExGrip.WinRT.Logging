@@ -2,6 +2,14 @@
 
 Yes, another logging framework for WinRT/Universal apps. It works with Windows Phone 8.1 and Windows 8.1 based XAML apps. It is written in C# and inspired by the classes available in the Windows.Foundation.Diagnostics namespace. Because those are not very extensible, I picked up the main concept and created an environment that will allow you to implement your own LoggingChannels or extend existing ones.
 
+## Prerequisites ##
+
+Since release 1.1.0 you need to install the SQLite extensions for Windows Phone and Windows Store apps, as well as the SQLite PCL NuGet-Package. The solution will try to restore the NuGet packages automatically, but you need to install the SQLite Visual Studio 2013 extensions for SQLite, you can read how to that here:
+
+[Portable Class Library for SQLite](https://sqlitepcl.codeplex.com/documentation "Portable Class Library for SQLite")
+
+**NOTE**:
+If you have any problems with the "Create New NuGet Package From Project After Each Build"  - just delete that package and compile. A NuGet package will be published soon.
 
 ## How it works ##
 
@@ -20,8 +28,15 @@ Both projects work with the same source on Windows Phone 8.1 and on Windows 8.1.
         using System.IO;
         using System.Linq;
         using System.Runtime.InteropServices.WindowsRuntime;
+        using System.Threading.Tasks;
+        using ExGrip.WinRT.Logging;
+        using ExGrip.WinRT.Logging.Channels;
+        using ExGrip.WinRT.Logging.Helpers;
+        using ExGrip.WinRT.Logging.LogEntries;
+        using ExGrip.WinRT.Logging.Sessions;
         using Windows.Foundation;
         using Windows.Foundation.Collections;
+        using Windows.Storage;
         using Windows.UI.Xaml;
         using Windows.UI.Xaml.Controls;
         using Windows.UI.Xaml.Controls.Primitives;
@@ -29,27 +44,34 @@ Both projects work with the same source on Windows Phone 8.1 and on Windows 8.1.
         using Windows.UI.Xaml.Input;
         using Windows.UI.Xaml.Media;
         using Windows.UI.Xaml.Navigation;
-        using ExGrip.WinRT.Logging.Helpers;
-        using ExGrip.WinRT.Logging.Sessions;
-        using ExGrip.WinRT.Logging.Channels;
-        using Windows.Storage;
-        using ExGrip.WinRT.Logging;
-        using System.Threading.Tasks;
 
-        // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
+        // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
-        namespace Logger {
+        namespace LoggerPhone {
             /// <summary>
             /// An empty page that can be used on its own or navigated to within a Frame.
             /// </summary>
             public sealed partial class MainPage : Page {
-
-
-
                 public MainPage() {
                     this.InitializeComponent();
+
+                    this.NavigationCacheMode = NavigationCacheMode.Required;
                 }
 
+                /// <summary>
+                /// Invoked when this page is about to be displayed in a Frame.
+                /// </summary>
+                /// <param name="e">Event data that describes how this page was reached.
+                /// This parameter is typically used to configure the page.</param>
+                protected override void OnNavigatedTo(NavigationEventArgs e) {
+                    // TODO: Prepare page for display here.
+
+                    // TODO: If your application contains multiple pages, ensure that you are
+                    // handling the hardware Back button by registering for the
+                    // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
+                    // If you are using the NavigationHelper provided by some templates,
+                    // this event is handled for you.
+                }
                 private async void Button_Click(object sender, RoutedEventArgs e) {
 
                     //Get  the LoggingSession instance
@@ -66,12 +88,19 @@ Both projects work with the same source on Windows Phone 8.1 and on Windows 8.1.
                     //Activate the channel
                     lgChannel.IsActive = true;
 
+
+                    //Create a new Sqlite log-channel
+                    MySqlLiteLogChannel sqlLogChannel = new MySqlLiteLogChannel("Log.db");
+                    sqlLogChannel.IsActive = true;
+                    sqlLogChannel.MaxFileSizeInBytes = 1048576; //1MB
+                    await sqlLogChannel.Init();
+
                     //Add the channel to the logging session
                     sess.LoggingChannels.Add("filelogger", lgChannel);
-
+                    sess.LoggingChannels.Add("sqlitelogger", sqlLogChannel);
 
                     //Try the concurrent file accesss
-                    Parallel.For(0, 10000, async (i)=>  {
+                    Parallel.For(0, 10000, async (i) => {
 
                         MyFileLogEntry lgEntry = new MyFileLogEntry() {
                             Entry = "Hello World " + i,
@@ -79,9 +108,17 @@ Both projects work with the same source on Windows Phone 8.1 and on Windows 8.1.
                             Time = DateTime.Now
                         };
 
+                        SqliteLogEntry sqlEntry = new SqliteLogEntry() {
+                            Entry = "Hello World " + i,
+                            EntrySeverity = LogSeverity.Informational
+                        };
+
                         //Log to a specific channel
                         var entry = await sess.LogToSpecificChannel("filelogger", lgEntry);
+
+                        var sqLiteEntry = await sess.LogToSpecificChannel("sqlitelogger", sqlEntry);
                     });
+
 
 
                     //How to use the string formatter
@@ -89,7 +126,7 @@ Both projects work with the same source on Windows Phone 8.1 and on Windows 8.1.
                     string format = "{FirstName}, {LastName} , {Time}";
 
                     //... and of course a object to be parsed ...
-                    var testObject = new { FirstName = "Nikola", LastName = "Tesla", Time = new DateTime(1856,7,10) };
+                    var testObject = new { FirstName = "Nikola", LastName = "Tesla", Time = new DateTime(1856, 7, 10) };
 
                     //... then call StringFormatter.FormatLogEntry...
                     var formatted = StringFormatter.FormatLogEntry(format, testObject);
@@ -104,6 +141,13 @@ Both projects work with the same source on Windows Phone 8.1 and on Windows 8.1.
                 public MyFileLogChannel(string fileName, StorageFolder logFolder) : base(fileName, logFolder) {
                 }
             }
+
+            //Sample SqliteLoggingChannel implementation
+            public class MySqlLiteLogChannel : SqliteLoggingChannel {
+                public MySqlLiteLogChannel(string databaseFileName) : base(databaseFileName) {
+                }
+            }
+
 
             //Sample ILogEntry implementation
             public class MyFileLogEntry : ILogEntry {
@@ -123,6 +167,7 @@ Both projects work with the same source on Windows Phone 8.1 and on Windows 8.1.
                 }
             }
         }
+
 
 First implement the abstract class **FileLoggingChannel**  and the interface **ILogEntry**. This will allow you to add your custom file-logging channel to the **LoggingSession** singleton. You instantiate it like this:
 
