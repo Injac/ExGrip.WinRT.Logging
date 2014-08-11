@@ -136,30 +136,37 @@ namespace ExGrip.WinRT.Logging.Sessions {
 
             return await Task.Run<ILogEntry>( async ()=> {
 
-                if (string.IsNullOrEmpty(channelName) || string.IsNullOrWhiteSpace(channelName)) {
-                    throw new ArgumentException("Parameter cannot be null or empty or whitespace", "channelName");
-                }
-
-                if (logEntry == null) {
-                    throw new ArgumentException("Parameter cannot be null.", "logEntry");
-                }
-
-                var channelExists = this.LoggingChannels.ContainsKey(channelName);
-
-                if(channelExists) {
-                    var channelToLogTo = this.LoggingChannels.FirstOrDefault(c=>c.Key.Equals(channelName)).Value;
-
-                    if(channelToLogTo != null) {
-                        if(channelToLogTo.IsActive) {
-                            await channelToLogTo.LogMessage(logEntry);
-                        }
-
-                        else {
-                            return null;
-                        }
-
-                        return logEntry;
+                try {
+                    if (string.IsNullOrEmpty(channelName) || string.IsNullOrWhiteSpace(channelName)) {
+                        throw new ArgumentException("Parameter cannot be null or empty or whitespace", "channelName");
                     }
+
+                    if (logEntry == null) {
+                        throw new ArgumentException("Parameter cannot be null.", "logEntry");
+                    }
+
+                    var channelExists = this.LoggingChannels.ContainsKey(channelName);
+
+                    if (channelExists) {
+                        var channelToLogTo = this.LoggingChannels.FirstOrDefault(c => c.Key.Equals(channelName)).Value;
+
+                        if (channelToLogTo != null) {
+                            if (channelToLogTo.IsActive) {
+                                await channelToLogTo.LogMessage(logEntry);
+                            }
+
+                            else {
+                                return null;
+                            }
+
+                            return logEntry;
+                        }
+                    }
+                }
+
+                catch (Exception ex) {
+
+                    throw;
                 }
 
                 return null;

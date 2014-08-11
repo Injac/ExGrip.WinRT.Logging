@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using ExGrip.WinRT.Logging.Exceptions;
+using ExGrip.WinRT.Logging.Helpers;
 using Windows.Storage;
 
 namespace ExGrip.WinRT.Logging.Channels {
@@ -130,22 +131,6 @@ namespace ExGrip.WinRT.Logging.Channels {
             this.File = await this.Folder.CreateFileAsync(this.LogFileName, CreationCollisionOption.OpenIfExists);
         }
 
-        /// <summary>
-        /// Gets the file size in bytes.
-        /// </summary>
-        /// <returns></returns>
-        protected virtual async Task GetFileSizeInBytes() {
-
-            if(this.File != null) {
-
-                var fileProperties = await this.File.GetBasicPropertiesAsync();
-
-                this.FileSizeInBytes = fileProperties.Size;
-
-
-            }
-
-        }
 
         /// <summary>
         /// Creates a zip file of the
@@ -155,46 +140,15 @@ namespace ExGrip.WinRT.Logging.Channels {
         protected virtual async Task ArchiveLog() {
 
 
-            using (MemoryStream archiveStream = new MemoryStream()) {
 
-                using (ZipArchive zip = new ZipArchive(archiveStream, ZipArchiveMode.Create,true)) {
+            await ZipArchiver.ArchiveTextFile(this.File, "logArchive", string.Format("{0}_logarchive.zip", DateTime.Now.Ticks));
 
-                    var logArchive = zip.CreateEntry(this.LogFileName);
+            await this.File.DeleteAsync();
 
-                    using (StreamWriter sw = new StreamWriter(logArchive.Open())) {
+            await this.Init();
 
-                        var logFileLines = await FileIO.ReadLinesAsync(this.File);
+            this.IsActive = true;
 
-                        var logFileContent = string.Join(Environment.NewLine, logFileLines);
-
-                        await sw.WriteAsync(logFileContent);
-
-
-                    }
-
-
-                }
-
-
-                var archiveFolder = await Windows.Storage.ApplicationData.Current.LocalFolder.CreateFolderAsync(
-                                        "logArchive", CreationCollisionOption.OpenIfExists);
-
-                var zipFile = await archiveFolder.CreateFileAsync(
-                                  string.Format("{0}_logarchive.zip", DateTime.Now.Ticks));
-
-                archiveStream.Position = 0;
-
-                using (Stream s = await zipFile.OpenStreamForWriteAsync()) {
-                    archiveStream.CopyTo(s);
-
-                }
-
-                await this.File.DeleteAsync();
-
-                await this.Init();
-
-                this.IsActive = true;
-            }
 
         }
 
@@ -229,9 +183,9 @@ namespace ExGrip.WinRT.Logging.Channels {
 
             try {
 
-                await this.GetFileSizeInBytes();
+                this.FileSizeInBytes = await this.File.GetFileSizeInBytes();
 
-                var spaceAvailable = await this.GetFreeSpace(this.Folder);
+                var spaceAvailable = await this.Folder.GetFreeSpace();
 
                 noSpaceLeft = (spaceAvailable < this.FileSizeInBytes);
 
@@ -262,22 +216,6 @@ namespace ExGrip.WinRT.Logging.Channels {
 
         }
 
-
-        /// <summary>
-        /// Taken from
-        /// http://stackoverflow.com/questions/19510449/disk-space-in-winrt-using-c-sharp-in-windows-8
-        /// Calculates the free space of a IStorage item (a folder for example)
-        /// </summary>
-        /// <param name="sf">The IStorage Item</param>
-        /// <returns>Available space left in IStorageItem (in bytes)</returns>
-        protected virtual async Task<UInt64> GetFreeSpace(IStorageItem sf) {
-
-            var properties = await sf.GetBasicPropertiesAsync();
-            var filteredProperties = await properties.RetrievePropertiesAsync(new[] { "System.FreeSpace" });
-            var freeSpace = filteredProperties["System.FreeSpace"];
-
-            return (UInt64)freeSpace;
-        }
 
 
 

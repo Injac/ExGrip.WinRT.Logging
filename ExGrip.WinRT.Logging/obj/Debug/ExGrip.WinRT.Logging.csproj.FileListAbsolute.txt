@@ -31,3 +31,4 @@ G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\ExGrip.WinRT.Logging
 G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\ExGrip.WinRT.Logging\obj\Debug\qualifiers.txt
 G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\ExGrip.WinRT.Logging\obj\Debug\qualifiers.txt.intermediate
 G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\ExGrip.WinRT.Logging\obj\Debug\MultipleQualifiersPerDimensionFound.txt
+G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\ExGrip.WinRT.Logging\bin\Debug\SQLitePCL.dll

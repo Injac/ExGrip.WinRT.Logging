@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using ExGrip.WinRT.Logging;
 using ExGrip.WinRT.Logging.Channels;
 using ExGrip.WinRT.Logging.Helpers;
+using ExGrip.WinRT.Logging.LogEntries;
 using ExGrip.WinRT.Logging.Sessions;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -62,9 +63,16 @@ namespace LoggerPhone {
             //Activate the channel
             lgChannel.IsActive = true;
 
+
+            //Create a new Sqlite log-channel
+            MySqlLiteLogChannel sqlLogChannel = new MySqlLiteLogChannel("Log.db");
+            sqlLogChannel.IsActive = true;
+            sqlLogChannel.MaxFileSizeInBytes = 1048576; //1MB
+            await sqlLogChannel.Init();
+
             //Add the channel to the logging session
             sess.LoggingChannels.Add("filelogger", lgChannel);
-
+            sess.LoggingChannels.Add("sqlitelogger", sqlLogChannel);
 
             //Try the concurrent file accesss
             Parallel.For(0, 10000, async (i) => {
@@ -75,9 +83,17 @@ namespace LoggerPhone {
                     Time = DateTime.Now
                 };
 
+                SqliteLogEntry sqlEntry = new SqliteLogEntry() {
+                    Entry = "Hello World " + i,
+                    EntrySeverity = LogSeverity.Informational
+                };
+
                 //Log to a specific channel
                 var entry = await sess.LogToSpecificChannel("filelogger", lgEntry);
+
+                var sqLiteEntry = await sess.LogToSpecificChannel("sqlitelogger", sqlEntry);
             });
+
 
 
             //How to use the string formatter
@@ -100,6 +116,13 @@ namespace LoggerPhone {
         public MyFileLogChannel(string fileName, StorageFolder logFolder) : base(fileName, logFolder) {
         }
     }
+
+    //Sample SqliteLoggingChannel implementation
+    public class MySqlLiteLogChannel : SqliteLoggingChannel {
+        public MySqlLiteLogChannel(string databaseFileName) : base(databaseFileName) {
+        }
+    }
+
 
     //Sample ILogEntry implementation
     public class MyFileLogEntry : ILogEntry {

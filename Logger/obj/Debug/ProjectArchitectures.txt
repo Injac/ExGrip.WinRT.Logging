@@ -1,2 +1,0 @@
-G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\ExGrip.WinRT.Logging\ExGrip.WinRT.Logging.csproj;neutral
-G:\Projects\ExGrip\Windows\LoggerWinRT\ExGrip.WinRT.Logging\Logger\Logger.csproj;neutral

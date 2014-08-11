@@ -4,18 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExGrip.WinRT.Logging
-{
-    public interface ILoggingChannel
-    {
-        LogSeverity DefaultSeverity { get; set;}
+namespace ExGrip.WinRT.Logging {
 
-        bool IsActive { get;set;}
+    public interface ILoggingChannel {
+        LogSeverity DefaultSeverity {
+            get;
+            set;
+        }
 
-        string ChannelName { get;set;}
+        bool IsActive {
+            get;
+            set;
+        }
+
+        string ChannelName {
+            get;
+            set;
+        }
+
+        Task Init();
 
         Task<ILogEntry> LogMessage(ILogEntry entry);
-         
-       
+
+
     }
 }

@@ -17,6 +17,7 @@ using ExGrip.WinRT.Logging.Sessions;
 using ExGrip.WinRT.Logging.Channels;
 using Windows.Storage;
 using ExGrip.WinRT.Logging;
+using ExGrip.WinRT.Logging.LogEntries;
 using System.Threading.Tasks;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -49,9 +50,16 @@ namespace Logger {
             //Activate the channel
             lgChannel.IsActive = true;
 
+
+            //Create a new Sqlite log-channel
+            MySqlLiteLogChannel sqlLogChannel = new MySqlLiteLogChannel("Log.db");
+            sqlLogChannel.IsActive = true;
+            sqlLogChannel.MaxFileSizeInBytes = 1048576; //1MB
+            await sqlLogChannel.Init();
+
             //Add the channel to the logging session
             sess.LoggingChannels.Add("filelogger", lgChannel);
-
+            sess.LoggingChannels.Add("sqlitelogger", sqlLogChannel);
 
             //Try the concurrent file accesss
             Parallel.For(0, 10000, async (i)=>  {
@@ -62,9 +70,17 @@ namespace Logger {
                     Time = DateTime.Now
                 };
 
+                SqliteLogEntry sqlEntry = new SqliteLogEntry() {
+                    Entry = "Hello World " + i,
+                    EntrySeverity = LogSeverity.Informational
+                };
+
                 //Log to a specific channel
                 var entry = await sess.LogToSpecificChannel("filelogger", lgEntry);
+
+                var sqLiteEntry =  await sess.LogToSpecificChannel("sqlitelogger", sqlEntry);
             });
+
 
 
             //How to use the string formatter
@@ -85,6 +101,12 @@ namespace Logger {
     //Sample FileLoggingChannel implementation
     public class MyFileLogChannel : FileLoggingChannel {
         public MyFileLogChannel(string fileName, StorageFolder logFolder) : base(fileName, logFolder) {
+        }
+    }
+
+    //Sample SqliteLoggingChannel implementation
+    public class MySqlLiteLogChannel : SqliteLoggingChannel {
+        public MySqlLiteLogChannel(string databaseFileName) : base(databaseFileName) {
         }
     }
 
