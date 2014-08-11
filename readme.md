@@ -9,7 +9,16 @@ Since release 1.1.0 you need to install the SQLite extensions for Windows Phone 
 [Portable Class Library for SQLite](https://sqlitepcl.codeplex.com/documentation "Portable Class Library for SQLite")
 
 **NOTE**:
-If you have any problems with the "Create New NuGet Package From Project After Each Build"  - just delete that package and compile. A NuGet package will be published soon.
+If you have any problems with the "Create New NuGet Package From Project After Each Build"  - just delete that package and compile. 
+
+## NuGet Packages ##
+
+Currently there are three different NuGet packages for each platform. This will change soon and a single package will be available with the next release.
+
+[X86](https://www.nuget.org/packages/ExGrip.WinRT.LoggingX86/ "X86 Package")
+[X64](https://www.nuget.org/packages/ExGrip.WinRT.LoggingX64/ "X64 Package")
+[ARM](https://www.nuget.org/packages/ExGrip.WinRT.LoggingARM/ "ARM Package")
+
 
 ## How it works ##
 
