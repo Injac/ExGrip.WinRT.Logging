@@ -150,7 +150,7 @@ namespace ExGrip.WinRT.Logging.Channels {
             //Implement your SQLLite backup logic here...
 
             await this.Init();
-            this.IsActive = true;
+            this.IsActive = false;
 
         }
 

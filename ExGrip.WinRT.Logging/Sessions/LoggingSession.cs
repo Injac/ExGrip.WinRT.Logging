@@ -166,7 +166,7 @@ namespace ExGrip.WinRT.Logging.Sessions {
 
                 catch (Exception ex) {
 
-                    throw;
+                    throw ex;
                 }
 
                 return null;
