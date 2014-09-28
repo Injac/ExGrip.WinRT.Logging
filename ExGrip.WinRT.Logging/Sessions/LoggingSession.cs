@@ -145,10 +145,10 @@ namespace ExGrip.WinRT.Logging.Sessions {
                         throw new ArgumentException("Parameter cannot be null.", "logEntry");
                     }
 
-                    var channelExists = this.LoggingChannels.ContainsKey(channelName);
+                    var channelExists = this.LoggingChannels.ContainsKey(channelName.ToUpper());
 
                     if (channelExists) {
-                        var channelToLogTo = this.LoggingChannels.FirstOrDefault(c => c.Key.Equals(channelName)).Value;
+                        var channelToLogTo = this.LoggingChannels.FirstOrDefault(c => c.Key.Equals(channelName.ToUpper())).Value;
 
                         if (channelToLogTo != null) {
                             if (channelToLogTo.IsActive) {
